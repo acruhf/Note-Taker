@@ -1,23 +1,21 @@
-// add required modules
-const express = require("express");
-const path = require("path");
+// Dependencies
+const express = require('express');
 
-// Create server application at port 3000
+// Set up express
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-// Read URL or JSON
-app.use(express.urlencoded({extended: true}));
+// /public line is needed in order to access CSS files properly
+app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Include js files
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// Routes
+require('./routes/apiroutes')(app);
+require('./routes/htmlroutes')(app);
 
-// Use public folder
-app.use(express.static("public"));
 
-// Add listener
-app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
-});
+
+app.listen(PORT, () => {
+    console.log(`App Vibing on PORT ${PORT}`);
+})

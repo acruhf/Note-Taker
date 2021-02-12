@@ -1,14 +1,18 @@
-const path = require("path");
+const path = require('path');
 
-module.exports = function(app){
-    
-    // Route to go to notes page
-    app.get("/notes", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
+module.exports = (app) => {
+    // get note HTML file
+    app.get('/notes', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/notes.html'));
     });
 
-    // Route to go to index page
-    app.get("/", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+    app.post('/notes', (req, res) => {
+        res.send('This is a post request');
     });
+
+    // get index HTML file
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/index.html'));
+    })
+
 }

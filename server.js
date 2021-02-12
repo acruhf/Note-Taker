@@ -17,5 +17,5 @@ require('./routes/htmlroutes')(app);
 
 
 app.listen(PORT, () => {
-    console.log(`App Vibing on PORT ${PORT}`);
+    console.log(`App Listening on PORT ${PORT}`);
 })

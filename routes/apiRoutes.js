@@ -9,7 +9,7 @@ var uniqid = require('uniqid');
 
 
 module.exports = (app) => {
-    // =========================
+    
     //Get the entire db.json object in JSON format
     app.get('/api/notes', (req, res) => {
         // Use FS to read the latest version of db.json
@@ -22,9 +22,9 @@ module.exports = (app) => {
         })
     })
 
-    // =========================
-    // Get individual items from db.json, based on the ID's; response given in JSON format
-    // =========================
+ 
+    // Get items from db.json based on the ID's; response given in JSON format
+
     app.get('/api/notes/:id', (req, res) => {
         // NoteId grabs the id from the url
         const noteId = req.params.id;
@@ -42,7 +42,7 @@ module.exports = (app) => {
         })
     })
 
-    // =========================
+
     // Post - Create a new Note after clicking the Save Button
     app.post('/api/notes', (req, res) => {
         fs.readFile('db/db.json', 'utf8', (err, data) => {
@@ -69,7 +69,7 @@ module.exports = (app) => {
             };
         });
     });
-    // =========================
+    
     // Deleting Notes
     app.delete('/api/notes/:id', (req, res) => {
         // NoteId grabs the id from the url

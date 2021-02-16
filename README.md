@@ -1,7 +1,7 @@
 # Note-Taker
 A simple note-taking app that allows the user to create and save notes using an Express.js back end to save and retrieve note data from a JSON file. The front-end of this site was provided for the sake of building a back end connection and deploying the app to Heroku.
   
-  [Screenshot 1](./readme_assets/Screenshot1.png)
+  ![Screenshot 1](./readme_assets/Screenshot1.png)
   
   ***
   

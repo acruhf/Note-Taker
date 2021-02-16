@@ -17,7 +17,7 @@ module.exports = (app) => {
             if (err) { console.err(err) }
             else {
                 res.json(JSON.parse(data));
-                // console.log(data);
+                
             }
         })
     })
